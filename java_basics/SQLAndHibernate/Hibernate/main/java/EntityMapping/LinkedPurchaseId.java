@@ -1,0 +1,26 @@
+package EntityMapping;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import java.io.Serializable;
+
+@Getter
+@Setter
+public class LinkedPurchaseId implements Serializable {
+    @Column(name = "student_id",
+            columnDefinition = "int unsigned"
+    )
+    private Integer studentId;
+
+    @Column(name = "course_id",
+            columnDefinition = "int unsigned"
+    )
+    private Integer courseId;
+
+    public LinkedPurchaseId(int studentId, int courseId) {
+        this.courseId = courseId;
+        this.studentId = studentId;
+    }
+}
